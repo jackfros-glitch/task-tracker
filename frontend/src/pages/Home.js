@@ -2,6 +2,7 @@ import Header  from "../components/Header"
 import Footer from "../components/Footer"
 import Tasks from "../components/Tasks"
 import { useState } from "react"
+import AddTask from "../components/AddTask"
 
 const Home = () => {
   const [tasks , setTasks] = useState([
@@ -25,13 +26,17 @@ const Home = () => {
     }
   ])
 
+  const doubleClick = (id) =>{
+    setTasks(tasks.map((task)=>(task.id !== id ? task : {...task, isCompleted : !task.isCompleted})))
+  }
 
 
   return (
    
       <div className="container">
         <Header  title='Task Tracker'/>
-        <Tasks tasks ={tasks} />
+        <Tasks tasks ={tasks} onClick ={doubleClick}/>
+        <AddTask/>
         <Footer/>
       </div>
   )
