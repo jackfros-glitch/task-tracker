@@ -10,6 +10,26 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+.flex{
+  display: flex;
+}
+
+.w-50{
+  width: 50%;
+}
+
+.card{
+  margin-left : 5px;
+  padding: 5px;
+}
+
+.card-img{
+  width:100px;
+  height: 100px;
+  border-radius: 50px;
+  object-fit: cover;
+  border: 1px solid #0000ffbd; 
+}
 .text-center{
   text-align: center;
 }

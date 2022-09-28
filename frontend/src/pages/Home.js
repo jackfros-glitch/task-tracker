@@ -50,9 +50,9 @@ const Home = () => {
    
       <div className="container">
         <Header  title='Task Tracker' buttonClick={showAdd} formState={addForm}/>
-        <Tasks tasks ={tasks} onClick ={doubleClick} onDelete={deleteTask}/>
+        {tasks ? <Tasks tasks ={tasks} onClick ={doubleClick} onDelete={deleteTask}/> : "No Tasks to Show"}
         {addForm && <AddTask addTask={addTask} />}
-        <Footer/>
+        <Footer to='/about' title='About'/>
       </div>
   )
 }
