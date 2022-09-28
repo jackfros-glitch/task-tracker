@@ -42,11 +42,15 @@ const Home = () => {
     setTasks([...tasks, newTask]);
   }
 
+  const deleteTask = (id) =>{
+    setTasks(tasks.filter((task)=>(task.id !== id)))
+  }
+
   return (
    
       <div className="container">
         <Header  title='Task Tracker' buttonClick={showAdd} formState={addForm}/>
-        <Tasks tasks ={tasks} onClick ={doubleClick}/>
+        <Tasks tasks ={tasks} onClick ={doubleClick} onDelete={deleteTask}/>
         {addForm && <AddTask addTask={addTask} />}
         <Footer/>
       </div>
