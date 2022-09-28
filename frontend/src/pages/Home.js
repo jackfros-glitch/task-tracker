@@ -26,17 +26,23 @@ const Home = () => {
     }
   ])
 
+  const [addForm, setAddForm] = useState(false)
+
+
   const doubleClick = (id) =>{
     setTasks(tasks.map((task)=>(task.id !== id ? task : {...task, isCompleted : !task.isCompleted})))
   }
 
+  const showAdd = ()=>{
+    setAddForm(!addForm);
+  }
 
   return (
    
       <div className="container">
-        <Header  title='Task Tracker'/>
+        <Header  title='Task Tracker' buttonClick={showAdd} formState={addForm}/>
         <Tasks tasks ={tasks} onClick ={doubleClick}/>
-        <AddTask/>
+        {addForm && <AddTask/>}
         <Footer/>
       </div>
   )
