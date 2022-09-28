@@ -36,13 +36,18 @@ const Home = () => {
   const showAdd = ()=>{
     setAddForm(!addForm);
   }
+  const addTask = (task) =>{
+    const id = Math.floor(Math.random() * 1000) + 1
+    const newTask = {id ,...task}
+    setTasks([...tasks, newTask]);
+  }
 
   return (
    
       <div className="container">
         <Header  title='Task Tracker' buttonClick={showAdd} formState={addForm}/>
         <Tasks tasks ={tasks} onClick ={doubleClick}/>
-        {addForm && <AddTask/>}
+        {addForm && <AddTask addTask={addTask} />}
         <Footer/>
       </div>
   )
