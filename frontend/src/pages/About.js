@@ -5,8 +5,8 @@ import Footer from '../components/Footer'
 
 const About = () => {
   return (
-    <div className='container card text-center' style={{marginLeft:''}}><h1>About Me </h1>
-    <div className='flex' style={{padding:'10px',marginTop:'15px', border:'1px solid gray', borderRadius:'10px', backgroundColor:'rgb(128, 128, 128 / 6%)'}}>
+    <div className='container card text-center' ><h1>About Me </h1>
+    <div className='flex card-bg-gray' style={{padding:'10px',marginTop:'15px', border:'1px solid gray', borderRadius:'10px'}}>
         <img src={img} alt="a pics of me" className='card-img' style={{}} />
         <div style={{width:'300px', marginLeft:'5px'}}>
             <p style={{opacity:'0.5'}}>Manasseh Hirekaan</p>
